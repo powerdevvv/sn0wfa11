@@ -1,1 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sn0wfa11</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00d2ff;
+            --secondary: #3a7bd5;
+            --dark-bg: #05070a;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --text: #f0f0f0;
+        }
 
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% -20%, #1a2a44 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            font-size: 1.4rem;
+            letter-spacing: -0.5px;
+        }
+
+        .logo img { width: 35px; margin-right: 12px; filter: drop-shadow(0 0 5px var(--primary)); }
+
+        .nav-links a {
+            color: #999;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .hero {
+            padding: 120px 20px 80px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(135deg, #fff 30%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 1.2rem;
+            margin: 20px 0 40px;
+        }
+
+        .btn-main {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.2);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 210, 255, 0.4);
+        }
+
+        .container { padding: 60px 8%; }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 24px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .card h3 { margin: 0 0 10px 0; font-size: 1.5rem; }
+        .card p { color: #888; font-size: 0.95rem; margin-bottom: 25px; }
+
+        .tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: #4cd137;
+        }
+
+        .status::before {
+            content: '';
+            width: 8px; height: 8px;
+            background: #4cd137;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #4cd137;
+        }
+
+        footer {
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 100px;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <nav>
+        <div class="logo">
+            <img src="sn0w.png" alt="sn0wfa11">
+            SN0WFA11
+        </div>
+        <div class="nav-links">
+            <a href="#cheats">Software</a>
+            <a href="https://discord.gg/rfbbVazz9R">Discord</a>
+            <a href="#about">Status</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="tag">Next-gen provider</div>
+        <h1>Pure Performance. Zero Cost.</h1>
+        <p>The most reliable software host. Regularly updated, and 100% free for the community.</p>
+        <a href="loader.exe" class="btn-main">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download loader
+        </a>
+    </section>
+
+    <div class="container" id="cheats">
+        <h2 class="section-title">Available Products</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="tag">Internal</div>
+                <h3>sn0wfa11</h3>
+                <p>Cheat from sn0wdevs team</p>
+                <div class="status">In development</div>
+            </div>
+            <div class="card">
+                <div class="tag">Internal</div>
+                <h3>gamesense</h3>
+                <p>CSGO cheat with massive history, now for free</p>
+                <div class="status">Undetected</div>
+            </div>
+            <div class="card">
+                <div class="tag">Internal</div>
+                <h3>ev0lve</h3>
+                <p>The most legendary cheat for csgo, now available with better performance</p>
+                <div class="status">Undetected</div>
+            </div>
+           <div class="card">
+                <div class="tag">Internal</div>
+                <h3>onetap</h3>
+                <p>Another legendary cheat for csgo, with history from 2014</p>
+                <div class="status">Undetected</div>
+            </div>
+            <div class="card">
+                <div class="tag">Internal</div>
+                <h3>legendware</h3>
+                <p>One of the worst cheats, idk why i've fixed this</p>
+                <div class="status">Undetected</div>
+            </div>
+            <div class="card">
+                <div class="tag">Internal</div>
+                <h3>fatality</h3>
+                <p>The most legendary cheat for csgo, that was competitor for gamesense it self</p>
+                <div class="status">In process of fixing</div>
+            </div>
+            <div class="card">
+                <div class="tag">Internal</div>
+                <h3>supremacy</h3>
+                <p>Cheat that was great for his time</p>
+                <div class="status">In process of fixing</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 sn0wfa11. Not affiliated with Valve.<br>
+        Developed with passion for the community.</p>
+    </footer>
+
+</body>
+</html>
